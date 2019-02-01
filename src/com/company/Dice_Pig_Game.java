@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Dice_Pig_Game {
 
-    static int random_roll() {
+    private static int random_roll() {
         Random pig = new Random();
         int roll = 0;
         int dice = pig.nextInt(5);
@@ -37,9 +37,6 @@ public class Dice_Pig_Game {
             case 5:
                 roll = 6;
                 break;
-
-            default:
-                roll = 0;
         }
         return roll;
     }
@@ -74,10 +71,11 @@ public class Dice_Pig_Game {
                 System.out.println("\nYou have scored over 100.");
                 another = "n";
             }
-            else  {
+            else {
                 System.out.print("\nRoll again? ");
                 another = scanner.nextLine();
             }
+
         } while (
                 (another.equals("y")) || ( another.equals("Y")) || (another.equals("yes"))
                 || (another.equals("YES")) || (another.equals("Yes"))
